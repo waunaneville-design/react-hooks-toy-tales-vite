@@ -15,16 +15,16 @@ function ToyForm({ onAddToy }) {
       likes: 0,
     };
 
-    .then((response) => {
-        if (!response.ok) throw new Error("Could not create new toy");fetch(TOYS_URL, {
+    fetch(TOYS_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newToy),
     })
-
-      return response.json();
+      .then((response) => {
+        if (!response.ok) throw new Error("Could not create new toy");
+        return response.json();
       })
       .then((createdToy) => {
         onAddToy(createdToy);
@@ -57,9 +57,8 @@ function ToyForm({ onAddToy }) {
           onChange={(event) => setImage(event.target.value)}
         />
         <br />
-
 <input
-          type="submit"
+         type="submit"
           name="submit"
           value="Create New Toy"
           className="submit"
@@ -69,6 +68,7 @@ function ToyForm({ onAddToy }) {
   );
 }
 
+export default ToyForm;
 
 
 
