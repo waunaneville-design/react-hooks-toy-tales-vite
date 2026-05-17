@@ -38,3 +38,20 @@ function App() {
     );
   }
 
+return (
+    <>
+      <Header />
+      {showForm ? <ToyForm onAddToy={handleAddToy} /> : null}
+      <div className="buttonContainer">
+        <button onClick={handleClick}>Add a Toy</button>
+      </div>
+      <ToyContainer
+        toys={toys}
+        onDeleteToy={handleDeleteToy}
+        onUpdateToy={handleUpdateToy}
+      />
+    </>
+  );
+}
+
+export default App;
