@@ -14,3 +14,10 @@ function ToyCard({ toy, onDeleteToy, onUpdateToy }) {
       body: JSON.stringify({ likes: updatedLikes }),
     })
  
+    .then((response) => {
+        if (!response.ok) throw new Error("Could not update toy likes");
+        return response.json();
+      })
+      .then(onUpdateToy)
+      .catch(console.error);
+  }
