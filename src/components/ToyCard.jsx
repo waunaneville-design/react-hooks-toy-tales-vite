@@ -21,3 +21,14 @@ function ToyCard({ toy, onDeleteToy, onUpdateToy }) {
       .then(onUpdateToy)
       .catch(console.error);
   }
+
+   function handleDelete() {
+    fetch(`${TOYS_URL}/${toy.id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Could not delete toy");
+        onDeleteToy(toy.id);
+      })
+      .catch(console.error);
+  }
