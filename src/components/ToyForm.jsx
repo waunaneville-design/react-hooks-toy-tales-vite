@@ -69,7 +69,6 @@ function ToyForm({ onAddToy }) {
   );
 }
 
-export default ToyForm;
 
 
 
