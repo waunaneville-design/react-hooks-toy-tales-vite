@@ -27,3 +27,9 @@ function App() {
   function handleAddToy(newToy) {
     setToys((prevToys) => [...prevToys, newToy]);
   }
+
+  function handleDeleteToy(id) {
+    setToys((prevToys) => prevToys.filter((toy) => toy.id !== id));
+  }
+
+  
