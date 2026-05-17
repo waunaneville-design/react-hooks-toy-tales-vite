@@ -46,3 +46,15 @@ function ToyForm({ onAddToy }) {
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
+        <br />
+        <input
+          type="text"
+          name="image"
+          placeholder="Enter a toy's image URL..."
+          className="input-text"
+          value={image}
+          onChange={(event) => setImage(event.target.value)}
+        />
+        <br />
+
+
