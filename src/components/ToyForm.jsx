@@ -14,3 +14,12 @@ function ToyForm({ onAddToy }) {
       image,
       likes: 0,
     };
+
+    .then((response) => {
+        if (!response.ok) throw new Error("Could not create new toy");fetch(TOYS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newToy),
+    })
