@@ -23,3 +23,7 @@ function App() {
  function handleClick() {
     setShowForm((prevShowForm) => !prevShowForm);
   }
+
+  function handleAddToy(newToy) {
+    setToys((prevToys) => [...prevToys, newToy]);
+  }
