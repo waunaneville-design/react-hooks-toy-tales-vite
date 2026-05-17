@@ -33,3 +33,16 @@ function ToyForm({ onAddToy }) {
       })
       .catch(console.error);
   }
+
+   return (
+    <div className="container">
+      <form className="add-toy-form" onSubmit={handleSubmit}>
+        <h3>Create a toy!</h3>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter a toy's name..."
+          className="input-text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
