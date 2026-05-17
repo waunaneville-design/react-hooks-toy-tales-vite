@@ -47,7 +47,8 @@ function ToyForm({ onAddToy }) {
           onChange={(event) => setName(event.target.value)}
         />
         <br />
-        <input
+        
+         <input
           type="text"
           name="image"
           placeholder="Enter a toy's image URL..."
@@ -56,5 +57,20 @@ function ToyForm({ onAddToy }) {
           onChange={(event) => setImage(event.target.value)}
         />
         <br />
+
+<input
+          type="submit"
+          name="submit"
+          value="Create New Toy"
+          className="submit"
+        />
+      </form>
+    </div>
+  );
+}
+
+export default ToyForm;
+
+
 
 
