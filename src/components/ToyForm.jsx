@@ -23,3 +23,13 @@ function ToyForm({ onAddToy }) {
       },
       body: JSON.stringify(newToy),
     })
+
+      return response.json();
+      })
+      .then((createdToy) => {
+        onAddToy(createdToy);
+        setName("");
+        setImage("");
+      })
+      .catch(console.error);
+  }
