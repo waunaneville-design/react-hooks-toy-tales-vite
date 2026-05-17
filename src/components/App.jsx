@@ -32,4 +32,9 @@ function App() {
     setToys((prevToys) => prevToys.filter((toy) => toy.id !== id));
   }
 
-  
+   function handleUpdateToy(updatedToy) {
+    setToys((prevToys) =>
+      prevToys.map((toy) => (toy.id === updatedToy.id ? updatedToy : toy))
+    );
+  }
+
